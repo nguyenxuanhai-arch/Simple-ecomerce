@@ -1,0 +1,24 @@
+# Java / Spring Boot
+backend/target/
+*.class
+*.jar
+*.war
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+frontend/target-dev-logs/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
