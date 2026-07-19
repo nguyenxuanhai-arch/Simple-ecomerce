@@ -22,3 +22,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Kubernetes credentials (local only)
+k8s/secret.yaml
