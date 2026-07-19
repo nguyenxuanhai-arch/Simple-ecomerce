@@ -86,3 +86,24 @@ Frontend: http://localhost:30081
 Docker Desktop Kubernetes is a local single-node Kubernetes environment. It is not a public cloud platform, but it is suitable for demonstrating cloud-native mechanisms such as container orchestration, load balancing, auto scaling, self-healing, and rolling update.
 
 The same architecture can be deployed to managed Kubernetes services such as Google Kubernetes Engine, Amazon EKS, or Azure Kubernetes Service.
+
+
+## Security: local Kubernetes secrets
+
+The production/local secret manifest is intentionally not stored in this repository.
+
+1. Copy the template:
+
+   ```bash
+   cp docs/secret.example.yaml k8s/secret.yaml
+   ```
+
+2. Replace both placeholder values with strong local or environment-specific passwords.
+3. Apply the secret before applying the deployment manifests:
+
+   ```bash
+   kubectl apply -f k8s/secret.yaml
+   kubectl apply -f k8s/
+   ```
+
+Never commit `k8s/secret.yaml`, real passwords, API keys, or tokens. For CI/CD, store sensitive values in the platform's secret manager rather than in Git.
